@@ -1,4 +1,7 @@
-# interactsh-lite
+# go-harden/interactsh-lite
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/go-harden/interactsh-lite/blob/master/LICENSE)
+[![BuildStatus](https://github.com/go-harden/interactsh-lite/actions/workflows/tests-main.yml/badge.svg)](https://github.com/go-harden/interactsh-lite/actions/workflows/tests-main.yml)
 
 A lightweight, dependency-minimal Go client for [Interactsh](https://github.com/projectdiscovery/interactsh) servers. This library provides out-of-band (OOB / OAST) interaction detection for security testing with a clean, simple API.
 
