@@ -116,7 +116,9 @@ func New(ctx context.Context, opts ...Options) (*Client, error) {
 	}
 
 	keepAliveInterval := opt.KeepAliveInterval
-	if keepAliveInterval == 0 && !opt.DisableKeepAlive {
+	if opt.DisableKeepAlive {
+		keepAliveInterval = 0
+	} else if keepAliveInterval == 0 {
 		keepAliveInterval = DefaultOptions.KeepAliveInterval
 	}
 
