@@ -139,7 +139,7 @@ func main() {
     ctx := context.Background()
 
     // Create client with default options (uses public servers)
-    client, err := oobclient.New(ctx, nil)
+    client, err := oobclient.New(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -169,7 +169,7 @@ func main() {
 #### Custom Server Configuration
 
 ```go
-client, err := oobclient.New(ctx, &oobclient.Options{
+client, err := oobclient.New(ctx, oobclient.Options{
     ServerURLs:        []string{"my-interactsh-server.example.com"},
     Token:             "my-auth-token",
     HTTPTimeout:       15 * time.Second,
@@ -253,7 +253,7 @@ This library is a mostly drop-in replacement for the [official Interactsh](https
 -opts.ServerURL = "oast.pro"
 -c, err := client.New(opts)
 +ctx := context.Background()
-+c, err := oobclient.New(ctx, &oobclient.Options{
++c, err := oobclient.New(ctx, oobclient.Options{
 +    ServerURLs: []string{"oast.pro"},
 +})
 ```
@@ -261,7 +261,6 @@ This library is a mostly drop-in replacement for the [official Interactsh](https
 Key differences:
 - `New()` now takes a `context.Context` as the first parameter
 - `ServerURL` (string) is now `ServerURLs` ([]string)
-- Pass `nil` for options to use defaults
 
 #### Polling for Interactions
 
